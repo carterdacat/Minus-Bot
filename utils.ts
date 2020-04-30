@@ -7,10 +7,13 @@ import {
   MessageReaction,
   User
 } from "discord.js";
+import {Client as PgClient} from "pg";
 
-export function getRandom(array: Array < any > ) {
+
+export function getRandom(array: Array<any>) {
   return array[Math.floor(Math.random() * array.length)];
 }
+
 export function convertMs(ms, delim = ":") {
   const showWith0 = value => (value < 10 ? `0${value}` : value);
   const days = showWith0(Math.floor((ms / (1000 * 60 * 60 * 24)) % 60));

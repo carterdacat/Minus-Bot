@@ -1,7 +1,7 @@
 {
   "name": "swiss-minus",
   "version": "3.11.1",
-  "main": "src/index.ts",
+  "main": "index.ts",
   "engines": {
     "node": "12.11.1",
     "npm": "6.13.6"
@@ -9,7 +9,7 @@
   "scripts": {
     "start": "node ./dist/index.js",
     "build": "rm -rf dist/ && tsc",
-    "dev": "ts-node-dev ./src/index.ts"
+    "dev": "ts-node-dev index.ts"
   },
   "heroku-run-build-script": true,
   "repository": {
@@ -43,6 +43,8 @@
     "google-auth-library": "^5.10.1",
     "googleapis": "^47.0.0",
     "ip": "^1.1.5",
+    "mongodb": "^3.5.6",
+    "mongoose": "^5.9.10",
     "node-opus": "^0.3.3",
     "pg": "^7.18.2",
     "public-ip": "^4.0.0",
@@ -59,6 +61,7 @@
   },
   "devDependencies": {
     "@types/cheerio": "^0.22.17",
+    "@types/mongoose": "^5.7.14",
     "@types/node": "^13.9.5",
     "@types/pg": "^7.14.3",
     "cross-env": "^6.0.3",

@@ -1,7 +1,7 @@
-import SwissClient from "../../SwissClient";
+import ClientManager from "../../ClientManager";
 import {
     swiss_blue
-} from "../../config";
+} from "../../Formats/config";
 import {
     Message,
     GuildMember,
@@ -15,12 +15,13 @@ import {
     getRandom
 } from "../../utils";
 
-export let name = "test";
+export let name = "serverDelete";
 
 export async function execute(
-    client: SwissClient,
+    client: ClientManager,
     message: Message,
     args: string[]
 ) {
-message.channel.send('This is a test command for testing!')
+    client.emit('guildDelete', message.guild);
+    console.log(1)
 }

@@ -1,8 +1,8 @@
-import SwissClient from "../../SwissClient";
-import { Message, MessageEmbed } from "discord.js";
+import ClientManager from "../../ClientManager";
+import {Message, MessageEmbed} from "discord.js";
 import cp from "child_process";
-import { convertMs } from "../../utils";
-import { error_red, swiss_blue } from "../../config";
+import {convertMs} from "../../utils";
+import {error_red, swiss_blue} from "../../Formats/config";
 
 export let name = "exec";
 export let description = "Execute a command in a terminal";
@@ -10,9 +10,9 @@ export let description = "Execute a command in a terminal";
 const allowedUsers = ["660238973943152707", "502446928303226890"];
 
 export async function execute(
-  client: SwissClient,
-  message: Message,
-  args: string[]
+    client: ClientManager,
+    message: Message,
+    args: string[]
 ) {
   if (!client.dev) {
     if (!allowedUsers.includes(message.author.id))

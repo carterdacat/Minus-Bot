@@ -1,17 +1,18 @@
-import { Client, Collection, ClientOptions } from "discord.js";
-import { Client as PgClient } from "pg";
-import { join } from "path";
-import { readdirSync } from "fs";
+import {Client, Collection, ClientOptions} from "discord.js";
+import {join} from "path";
+import {readdirSync} from "fs";
+import {Connection} from 'mongoose'
 
-interface SwissOptions {
-  db: PgClient;
+interface Options {
+  db;
   dev: boolean;
   version: string;
   commandPath: string;
   eventPath: string;
 }
-class SwissClient extends Client {
-  public db: PgClient;
+
+class ClientManager extends Client {
+  public db
   public dev: boolean;
   public version: string;
   public commands: Collection<string, any>;
@@ -19,7 +20,7 @@ class SwissClient extends Client {
   public commandsFailed: number;
   public events: Collection<string, any>;
 
-  public constructor(options: SwissOptions, discordOptions: ClientOptions) {
+  public constructor(options: { eventPath: string; dev: boolean; commandPath: string; version: string; db: Connection }, discordOptions: ClientOptions) {
     super(discordOptions);
     this.db = options.db;
     this.dev = options.dev;
@@ -86,4 +87,4 @@ class SwissClient extends Client {
   }
 }
 
-export default SwissClient;
+export default ClientManager;
