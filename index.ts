@@ -9,17 +9,11 @@ const {version} = require("./package.json");
 import ClientManager from "./ClientManager";
 import mongoose from "mongoose"
 
-
-dotenv.config({path: join(__dirname, "../.env")});
+dotenv.config({ path: join(__dirname, "/.env") });
 const dev = !!process.env.dev;
 let db;
-console.log(process.env.MONGODB_)
-mongoose.connect(process.env.MONGODB_, {useNewUrlParser: true, useUnifiedTopology: true})
-    .then(a => db = a)
-let connection = db.connection
-connection.once('open', () => {
-  console.log('Connected to MongoDB')
-})
+(async () => {
+db = await mongoose.connect(process.env.MONGODB_, {useNewUrlParser: true, useUnifiedTopology: true})
 
 const client = new ClientManager(
     {db, dev, version, commandPath: "./commands", eventPath: "./events"},
@@ -31,4 +25,4 @@ client.login(process.env.token).then(async _token => {
       .setActivity(`the ${version} update`, {type: "WATCHING"})
       .then()
       .catch(console.error);
-});
+})})();

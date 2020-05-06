@@ -28,7 +28,7 @@
         <schema name="public" object-types="table, view" />
       </connection>
       <connection connection-id="96b18fa5-123e-49db-838d-828f71c547f3">
-        <schema name="public" object-types="dataset trigger, column, constraint, index, table" />
+        <schema name="public" object-types="table, view" />
       </connection>
     </loaded-nodes>
   </component>

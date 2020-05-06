@@ -15,7 +15,7 @@ import {
     getRandom
 } from "../../utils";
 
-export let name = "serverDelete";
+export let name = "serverdelete";
 
 export async function execute(
     client: ClientManager,
@@ -23,5 +23,4 @@ export async function execute(
     args: string[]
 ) {
     client.emit('guildDelete', message.guild);
-    console.log(1)
 }

@@ -2,6 +2,7 @@ import {Client, Collection, ClientOptions} from "discord.js";
 import {join} from "path";
 import {readdirSync} from "fs";
 import {Connection} from 'mongoose'
+import * as mongoose from "mongoose";
 
 interface Options {
   db;
@@ -12,7 +13,7 @@ interface Options {
 }
 
 class ClientManager extends Client {
-  public db
+  public db: Connection;
   public dev: boolean;
   public version: string;
   public commands: Collection<string, any>;

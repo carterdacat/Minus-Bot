@@ -1,11 +1,9 @@
-import {MessageEmbed, TextChannel, Message, Collection, Guild} from "discord.js";
-import {error_red, log_yellow} from "../Formats/config";
+import {Guild} from "discord.js";
 import ClientManager from "../ClientManager";
-import {convertMs} from "../utils";
-import {Client as PgClient} from "pg";
-import * as module from "module";
+import DBServer from '../Formats/schemas'
+import * as mongoose from "mongoose";
 
-export let name = "guildDelete";
+export let name = "serverDelete";
 export let invoke = "guildDelete";
 
 export async function execute(
@@ -13,5 +11,7 @@ export async function execute(
     guild: Guild,
 ) {
     guild = await guild.fetch();
-    console.log(client.db)
+    DBServer.deleteOne({serverID: guild.id}, err => {
+        err ? console.error(err) : null;
+    });
 }

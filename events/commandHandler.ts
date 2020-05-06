@@ -11,7 +11,6 @@ export async function execute(
     client: ClientManager,
     message: Message,
 ) {
-    let serverInfo;
     if (message.channel.type === "dm") {
         return;
     }
@@ -31,7 +30,6 @@ export async function execute(
         .split(/ +/g);
 
     const commandName = args.shift().toLowerCase();
-
     const command =
         client.commands.get(commandName) ||
         client.commands.find(
@@ -40,6 +38,7 @@ export async function execute(
         );
     if (!args[0] && !commandName) return;
     if (!command) return
+
 
     if (command.args && !args.length) {
         const embed = new MessageEmbed()

@@ -15,13 +15,12 @@ import {
     getRandom
 } from "../../utils";
 
-export let name = "serverCreate";
+export let name = "servercreate";
 
 export async function execute(
     client: ClientManager,
     message: Message,
     _args: string[]
 ) {
-    console.log('test')
     client.emit('guildCreate', message.guild);
 }
