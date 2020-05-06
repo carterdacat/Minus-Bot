@@ -1,7 +1,7 @@
 import {MessageEmbed, TextChannel, Message, Collection} from "discord.js";
 import {error_red, log_yellow} from "../Formats/config";
 import ClientManager from "../ClientManager";
-import {convertMs} from "../utils";
+import {convertMs} from "../Formats/utils";
 import {Client as PgClient} from "pg";
 
 export let name = "commandHandler";

@@ -13,7 +13,7 @@ import {
 import {
     awaitMessage,
     getRandom
-} from "../../utils";
+} from "../../Formats/utils";
 
 export let name = "serverdelete";
 

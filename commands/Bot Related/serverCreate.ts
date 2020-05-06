@@ -1,19 +1,9 @@
 import ClientManager from "../../ClientManager";
+
 import {
-    swiss_blue
-} from "../../Formats/config";
-import {
-    Message,
-    GuildMember,
-    MessageEmbed,
-    ReactionCollector,
-    MessageReaction,
-    User
+    Message
 } from "discord.js";
-import {
-    awaitMessage,
-    getRandom
-} from "../../utils";
+
 
 export let name = "servercreate";
 

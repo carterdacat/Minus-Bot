@@ -1,7 +1,7 @@
 import ClientManager from "../../ClientManager";
 import {Message, MessageEmbed} from "discord.js";
 import cp from "child_process";
-import {convertMs} from "../../utils";
+import {convertMs} from "../../Formats/utils";
 import {error_red, swiss_blue} from "../../Formats/config";
 
 export let name = "exec";
