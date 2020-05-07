@@ -1,13 +1,12 @@
 import {MessageEmbed, Guild} from "discord.js";
 import ClientManager from "../ClientManager";
 import DBServer from '../Formats/schemas'
-import * as mongoose from "mongoose";
 
 export let name = "serverCreate";
 export let invoke = "guildCreate";
 
 export async function execute(
-    client: ClientManager,
+    _: ClientManager,
     guildCreate: Guild,
 ) {
     const guild: Guild = await guildCreate.fetch()
