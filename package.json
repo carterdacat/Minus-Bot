@@ -47,7 +47,7 @@
     "mongoose": "^5.9.10",
     "node-opus": "^0.3.3",
     "pg": "^7.18.2",
-    "public-ip": "^4.0.0",
+    "public-ip": "^4.0.1",
     "puppeteer": "^2.1.1",
     "random-puppy": "^1.1.0",
     "recursive-readdir": "^2.2.2",
