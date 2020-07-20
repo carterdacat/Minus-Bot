@@ -38,7 +38,7 @@
     "ejs": "^3.0.1",
     "express": "^4.17.1",
     "express-session": "^1.17.0",
-    "ffmpeg-static": "^4.0.1",
+    "ffmpeg-static": "^4.2.6",
     "github-api": "^3.3.0",
     "google-auth-library": "^5.10.1",
     "googleapis": "^51.0.0",
